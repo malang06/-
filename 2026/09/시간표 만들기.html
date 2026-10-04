@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <title>26년도 2학기 시간표</title> 
 </head>
-<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<style>
+    .t1 {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400px;
+  font-style: normal;
+}
+    .전공 {background-color: aliceblue;}
+    .교양 {background-color: cornsilk;}
+    #god {background-color: honeydew}
+    th {background-color: pink;}
+    *{width: 900px; height: 10%; font-size: 40px ;}
+
+</style>
+<body class="t1">
     <h1>26년 2학기 시간표</h1>
+    <br>
     <table border="1">
         <thead>
-            <tr>
+            <tr >
                 <th>시간/요일</th>
                 <th>월</th>
                 <th>화</th>
@@ -20,10 +37,10 @@
         <tbody>
             <tr>
                 <td>1교시(9시)</td>
-                <td rowspan="2">초급 스페인어</td>
+                <td rowspan="2" class="교양">초급 스페인어</td>
                 <td></td>
                 <td></td>
-                <td rowspan="3">열역학</td>
+                <td rowspan="3" class="전공">열역학</td>
                 <td></td>
             </tr>
             <tr>
@@ -34,10 +51,10 @@
             </tr>
             <tr>
                 <td>3교시(11시)</td>
-                <td>채플</td>
+                <td id="god">채플</td>
                 <td></td>
                 <td></td>
-                <td rowspan="2">스케이트 초급</td>
+                <td rowspan="2" class="교양">스케이트 초급</td>
             </tr>
             <tr>
                 <td>4교시(12시)</td>
@@ -52,18 +69,18 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td rowspan="2">스쿼시</td>
+                <td rowspan="2" class="교양">스쿼시</td>
             </tr>
             <tr>
                 <td>6교시(14시)</td>
                 <td></td>
-                <td rowspan="3"> 웹프로그래밍</td>
+                <td rowspan="3" class="전공"> 웹프로그래밍</td>
                 <td></td>
-                <td rowspan="3"> AI반도체공정</td>
+                <td rowspan="3" class="전공"> AI반도체공정</td>
             </tr>
             <tr>
                 <td>7교시(15시)</td>
-                <td rowspan="3">생활속 물리</td>
+                <td rowspan="3" class="교양">생활속 물리</td>
                 <td></td>
                 <td></td>
             </tr>
@@ -82,7 +99,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="6">여백의美</td>
+                <td colspan="6" center><del>수요일 공강 야호~</del></td>
             </tr>
         </tfoot>
     </table>
