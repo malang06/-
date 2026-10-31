@@ -5,10 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java 7</title>
 </head>
-<script>
-    
-</script>
 <body>
-  <h1>반복문</h1>
+  <h1>JS 반복문</h1>
+  <script>
+    let number = prompt("정수를 입력하세요.")
+    /*
+    let num = 1;
+    while( num <= number ){
+      document.write( num+'<br>');
+      num++;
+    }
+    for(num = 1; num <= number; num++) {
+      document.write( num+'<br>');
+    }
+    */
+    let sum =0;
+    let i = 1;
+    for( i = 1; i <= number; i++){
+      sum = sum + i;
+    }
+    document.write(sum+'<br>');
+  </script>
 </body>
 </html>

@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Java 5</title>
+  <title>Java 6</title>
 </head>
 <script>
-    
+  let Number = prompt("성적을 점수를 입력하세요.")
+  switch(parseInt(Number/10)) {
+    case 10:
+    case 9:
+      alert('A입니다.');
+      break;
+    case 8:
+      alert('B입니다.');
+      break;
+    case 7:
+      alert('C입니다.');
+      break;
+    case 6:
+      alert('D입니다.');
+      break;
+    default:
+      alert('F입니다.');
+      break;
+  }
 </script>
 <body>
   <h1>switch로 성적 처리 </h1>
