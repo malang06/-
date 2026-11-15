@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+  <style>
+    h1 { text-align: center;}
+    .disp { width: 205px; height: 40px; margin-top: 3px; text-align: right; font-family: "Oxanium", sans-serif; font-size: 22pt;}
+    input[type=button] {width: 50px; height: 50px; margin-top: 5px; text-align: center; vertical-align: middle;}
+    #calc {width: 220px; margin-left: auto; margin-right: auto;}
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+      $(document).ready(function(){
+          // 숫자 버튼 클릭
+          $(".num").click(function(){            
+              let cur = $("#disp2").val();
+              let n = $(this).val();
+              $("#disp2").val(cur + n);
+          });
+
+          // 연산자 버튼 및 '=' 클릭
+          $(".op").click(function(){              
+              let cur = $("#disp2").val();
+              let n = $(this).val();
+              
+              if(n !== "=") {                    // '='이 아닌 연산자들 (+, -, *, /)
+                  $("#disp2").val(cur + n);
+              } 
+              else {                             // '=' 연산 (eval 대신 Function 사용)
+                  if(cur === "") return;
+                  
+                  try {
+                      // eval() 대신 new Function을 사용하여 수식 계산 (안전성 확보)
+                      let result = new Function('return ' + cur)();
+                      
+                      // 결과 처리
+                      $("#disp1").val(cur + " =");
+                      $("#disp2").val(result);
+                  } catch (error) {
+                      $("#disp1").val("Error");
+                      $("#disp2").val("");
+                  }
+              }
+          });
+
+          // AC 버튼 클릭 (초기화)
+          $(".func").click(function(){              
+              $("#disp1").val("");
+              $("#disp2").val("");
+          });
+      });
+  </script>
+</head>
+<body>
+  <h1>계산기</h1>
+  <div id="calc">
+    <div>
+        <input type="text" class="disp" id="disp1" readonly>
+        <input type="text" class="disp" id="disp2" readonly>
+    </div>
+    <input type="button" class="num" value="7">
+    <input type="button" class="num" value="8">
+    <input type="button" class="num" value="9">
+    <input type="button" class="op" value="+"><br>
+    <input type="button" class="num" value="4">
+    <input type="button" class="num" value="5">
+    <input type="button" class="num" value="6">
+    <input type="button" class="op" value="-"><br>
+    <input type="button" class="num" value="1">
+    <input type="button" class="num" value="2">
+    <input type="button" class="num" value="3">
+    <input type="button" class="op" value="*"><br>
+    <input type="button" class="func" value="ac">
+    <input type="button" class="num" value="0">
+    <input type="button" class="op" value="=">
+    <input type="button" class="op" value="/"><br>
+  </div>
+</body>
+</html>
