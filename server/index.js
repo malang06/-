@@ -1,10 +1,12 @@
 const { fstat } = require("fs");
 const http = require("http");
 
+
 const server = http.createServer((req,res) => {
     console.log("요청 발생");
+    console.log(req.method);
     res.setHeader("Content-Type","text/plain");
-    const readStream = fstat.createReadStream(_dirname+ "/index.html","utf8");
+    const readStream = fstat.createReadStream(__dirname+ "/index.html","utf8");
     readStream.pipe(res);
 });
 
